@@ -1,7 +1,7 @@
 import { URI_AVAILABLE } from '@web3-react/walletconnect'
 import { useEffect, useState } from 'react'
 
-import { hooks, walletConnectV2 } from '../../connectors/walletConnectV2'
+import { hooks, walletConnect } from '../../connectors/walletConnect'
 import { Card } from '../Card'
 
 const { useChainId, useAccounts, useIsActivating, useIsActive, useProvider, useENSNames } = hooks
@@ -20,21 +20,21 @@ export default function WalletConnectCard() {
 
   // log URI when available
   useEffect(() => {
-    walletConnectV2.events.on(URI_AVAILABLE, (uri: string) => {
+    walletConnect.events.on(URI_AVAILABLE, (uri: string) => {
       console.log(`uri: ${uri}`)
     })
   }, [])
 
   // attempt to connect eagerly on mount
   useEffect(() => {
-    walletConnectV2.connectEagerly().catch(() => {
+    walletConnect.connectEagerly().catch(() => {
       console.debug('Failed to connect eagerly to walletconnect')
     })
   }, [])
 
   return (
     <Card
-      connector={walletConnectV2}
+      connector={walletConnect}
       activeChainId={chainId}
       isActivating={isActivating}
       isActive={isActive}

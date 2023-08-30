@@ -3,10 +3,9 @@
  */
 const nextConfig = {
   env: {
-    infuraKey: process.env.NEXT_PUBLIC_INFURA_KEY,
-    alchemyKey: process.env.NEXT_PUBLIC_ALCHEMY_KEY,
-    magicKey: process.env.NEXT_PUBLIC_MAGIC_KEY,
-walletConnectKey: process.env.NEXT_PUBLIC_WALLET_CONNECT_KEY,
+    infuraKey: process.env.INFURA_KEY,
+    alchemyKey: process.env.ALCHEMY_KEY,
+    walletConnectProjectId: process.env.NEXT_PUBLIC_WALLETCONNECT_V2_PROJECT_ID,
   },
 }
 
