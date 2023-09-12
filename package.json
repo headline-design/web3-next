@@ -25,7 +25,6 @@
     "@web3-react/network": "8.2.2",
     "@web3-react/types": "8.2.2",
     "@web3-react/url": "8.2.2",
-    "@web3-react/walletconnect": "8.2.2",
     "@web3-react/walletconnect-v2": "8.5.0",
     "next": "^13.4.19",
     "react": "18.2.0",

@@ -6,6 +6,18 @@ const ETH: AddEthereumChainParameter['nativeCurrency'] = {
   decimals: 18,
 }
 
+const GLMR: AddEthereumChainParameter['nativeCurrency'] = {
+  name: 'Glimmer',
+  symbol: 'GLMR',
+  decimals: 18,
+}
+
+const DEV: AddEthereumChainParameter['nativeCurrency'] = {
+  name: 'Dev',
+  symbol: 'DEV',
+  decimals: 18,
+}
+
 const MATIC: AddEthereumChainParameter['nativeCurrency'] = {
   name: 'Matic',
   symbol: 'MATIC',
@@ -73,6 +85,12 @@ export const MAINNET_CHAINS: ChainConfig = {
     nativeCurrency: ETH,
     blockExplorerUrls: ['https://arbiscan.io'],
   },
+  1284: {
+    urls: [getInfuraUrlFor('moonbeam-mainnet'), 'https://rpc.api.moonbeam.network'].filter(Boolean),
+    name: 'Moonbeam Mainnet',
+    nativeCurrency: GLMR,
+    blockExplorerUrls: ['https://moonscan.io'],
+  },
   137: {
     urls: [getInfuraUrlFor('polygon-mainnet'), 'https://polygon-rpc.com'].filter(Boolean),
     name: 'Polygon Mainnet',
@@ -109,6 +127,12 @@ export const TESTNET_CHAINS: ChainConfig = {
     name: 'Polygon Mumbai',
     nativeCurrency: MATIC,
     blockExplorerUrls: ['https://mumbai.polygonscan.com'],
+  },
+  1287: {
+    urls: [getInfuraUrlFor('moonbase-alpha')].filter(Boolean),
+    name: 'Moonbase Alpha',
+    nativeCurrency: DEV,
+    blockExplorerUrls: ['https://rpc.api.moonbase.moonbeam.network'],
   },
   44787: {
     urls: ['https://alfajores-forno.celo-testnet.org'],
