@@ -86,7 +86,6 @@ export function ConnectWithSelect({
           await connector.activate()
         } else if (
           connector instanceof WalletConnectV2 ||
-          connector instanceof WalletConnect ||
           connector instanceof Network
         ) {
           await connector.activate(desiredChainId)
